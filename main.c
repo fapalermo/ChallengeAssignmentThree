@@ -4,5 +4,7 @@ int main(void)
 {
     WDT_A_holdTimer();
 
-    while(1);
+    while(1) {
+    	// FIGURING OUT GITHUB
+    }
 }
