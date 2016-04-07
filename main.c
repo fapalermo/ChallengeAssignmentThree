@@ -82,9 +82,9 @@ void main(void)
 }
 
 
-/* This interrupt is fired whenever a conversion is completed and placed in
- * ADC_MEM2. This signals the end of conversion and the results array is
- * grabbed and placed in resultsBuffer */
+//	This interrupt is fired whenever a conversion is completed and placed in
+//	ADC_MEM2. This signals the end of conversion and the results array is
+//	grabbed and placed in resultsBuffer
 void ADC14_IRQHandler(void)
 {
     uint64_t status;
@@ -92,18 +92,16 @@ void ADC14_IRQHandler(void)
     status = MAP_ADC14_getEnabledInterruptStatus();
     MAP_ADC14_clearInterruptFlag(status);
 
-    /* ADC_MEM2 conversion completed */
+    //	ADC_MEM2 conversion completed
     if(status & ADC_INT2)
     {
-        /* Store ADC14 conversion results */
+        //	Store ADC14 conversion results
         resultsBuffer[0] = ADC14_getResult(ADC_MEM0);
         resultsBuffer[1] = ADC14_getResult(ADC_MEM1);
         resultsBuffer[2] = ADC14_getResult(ADC_MEM2);
 
-        /*
-         * Draw accelerometer data on display and determine if orientation
-         * change thresholds are reached and redraw as necessary
-         */
+        //	Draw accelerometer data on display and determine if orientation
+        //	change thresholds are reached and redraw as necessary
         if (resultsBuffer[0] < 4900) {
             if (Lcd_Orientation != LCD_ORIENTATION_LEFT) {
                 Crystalfontz128x128_SetOrientation(LCD_ORIENTATION_LEFT);
