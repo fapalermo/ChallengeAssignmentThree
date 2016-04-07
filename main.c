@@ -2,8 +2,8 @@
 //
 //	Challenge 3 - ECE 461
 //	Bralyn Fagel
-//	Francesco
-//	Kevin
+//	Francesco Fagel
+//	Kevin Fagel
 //
 //----------------------------------------------------------------------------
 
