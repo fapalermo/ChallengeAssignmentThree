@@ -35,7 +35,6 @@
 //****************************************************************************
 
 #include <stdint.h>
-#include "functions.h"
 
 /* Forward declaration of the default fault handlers. */
 static void resetISR(void);
@@ -58,9 +57,8 @@ extern unsigned long __STACK_END;
 /* External declarations for the interrupt handlers used by the application. */
 //extern void SysTick_Handler(void);
 extern void ADC14_IRQHandler(void);
-
 /* To be added by user */
-static void Button1_ISR(void);
+
 
 /* Interrupt vector table.  Note that the proper constructs must be placed on this to  */
 /* ensure that it ends up at physical address 0x0000.0000 or at the start of          */
@@ -125,7 +123,7 @@ void (* const interruptVectors[])(void) =
     defaultISR,                             /* PORT2 ISR                 */
     defaultISR,                             /* PORT3 ISR                 */
     defaultISR,                             /* PORT4 ISR                 */
-    Button1_ISR,                             /* PORT5 ISR                 */
+    defaultISR,                             /* PORT5 ISR                 */
     defaultISR,                             /* PORT6 ISR                 */
     defaultISR,                             /* Reserved 41               */
     defaultISR,                             /* Reserved 42               */
@@ -219,10 +217,4 @@ static void defaultISR(void)
     }
 
     #pragma diag_pop
-}
-
-static void Button1_ISR() {
-	P2OUT |= BIT4;
-	__delay_cycles(500000);
-	P2OUT &= ~BIT4;
 }
