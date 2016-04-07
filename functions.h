@@ -34,8 +34,8 @@ Graphics_Context g_sContext;
 // Functions
 void port_init(void);
 void screen_init(void);
-void drawTitle(void);
-void drawAccelData(void);
+//void drawTitle(void);
+//void drawAccelData(void);
 void delay(uint32_t);
 void enableWDT(void);
 

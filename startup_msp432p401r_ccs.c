@@ -55,8 +55,8 @@ extern unsigned long __STACK_END;
 
 
 /* External declarations for the interrupt handlers used by the application. */
-//void SysTick_Handler(void);
-void ADC14_IRQHandler(void);
+//extern void SysTick_Handler(void);
+extern void ADC14_IRQHandler(void);
 /* To be added by user */
 
 

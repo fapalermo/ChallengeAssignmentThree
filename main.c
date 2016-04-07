@@ -7,9 +7,25 @@
 //
 //----------------------------------------------------------------------------
 
-#include <functions.h>
+#include "msp.h"
+#include <driverlib.h>
+#include <grlib.h>
+#include "Crystalfontz128x128_ST7735.h"
+#include <stdio.h>
 
-int main(void) 
+/* Graphic library context */
+Graphics_Context g_sContext;
+
+/* ADC results buffer */
+static uint16_t resultsBuffer[3];
+
+void drawTitle(void);
+void drawAccelData(void);
+
+/*
+ * Main function
+ */
+void main(void)
 {
     /* Halting WDT and disabling master interrupts */
     MAP_WDT_A_holdTimer();
@@ -76,21 +92,61 @@ int main(void)
     MAP_ADC14_enableConversion();
     MAP_ADC14_toggleConversionTrigger();
 
-
-    // Since the MCLK was changed, grab new core speed for delay calcs
-	SystemCoreClockUpdate();
-	SysTick_Config(SystemCoreClock / 1000);		// This sets the Systick interrupt to go off every 1ms
-
     while(1)
     {
-    	 MAP_PCM_gotoLPM0();
+        MAP_PCM_gotoLPM0();
     }
 }
 
-//void SysTick_Handler(void)
-//{
-//	msTicks++;
-//}
+
+/*
+ * Clear display and redraw title + accelerometer data
+ */
+void drawTitle()
+{
+    Graphics_clearDisplay(&g_sContext);
+    Graphics_drawStringCentered(&g_sContext,
+                                    "Accelerometer:",
+                                    AUTO_STRING_LENGTH,
+                                    64,
+                                    30,
+                                    OPAQUE_TEXT);
+    drawAccelData();
+}
+
+
+/*
+ * Redraw accelerometer data
+ */
+void drawAccelData()
+{
+    char string[8];
+    sprintf(string, "X: %5d", resultsBuffer[0]);
+    Graphics_drawStringCentered(&g_sContext,
+                                    (int8_t *)string,
+                                    8,
+                                    64,
+                                    50,
+                                    OPAQUE_TEXT);
+
+    sprintf(string, "Y: %5d", resultsBuffer[1]);
+    Graphics_drawStringCentered(&g_sContext,
+                                    (int8_t *)string,
+                                    8,
+                                    64,
+                                    70,
+                                    OPAQUE_TEXT);
+
+    sprintf(string, "Z: %5d", resultsBuffer[2]);
+    Graphics_drawStringCentered(&g_sContext,
+                                    (int8_t *)string,
+                                    8,
+                                    64,
+                                    90,
+                                    OPAQUE_TEXT);
+
+}
+
 
 /* This interrupt is fired whenever a conversion is completed and placed in
  * ADC_MEM2. This signals the end of conversion and the results array is

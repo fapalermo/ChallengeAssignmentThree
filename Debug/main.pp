@@ -1,12 +1,9 @@
 # FIXED
 
 main.obj: ../main.c
-main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/functions.h
-main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/driverlib/MSP432P4xx/driverlib.h
-main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/driverlib/MSP432P4xx/adc14.h
-main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdint.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/msp.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/msp432p401r.h
+main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdint.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/msp_compatibility.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/msp432p401r_classic.h
@@ -15,6 +12,8 @@ main.obj: C:/ti/ccsv6/ccs_base/arm/include/CMSIS/core_cmInstr.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/CMSIS/core_cmFunc.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/CMSIS/core_cmSimd.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/system_msp432p401r.h
+main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/driverlib/MSP432P4xx/driverlib.h
+main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/driverlib/MSP432P4xx/adc14.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdbool.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/yvals.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdarg.h
@@ -52,18 +51,13 @@ main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/GrLib/grlib/grl
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/assert.h
 main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/LcdDriver/Crystalfontz128x128_ST7735.h
 main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/GrLib/grlib/grlib.h
-main.obj: C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/LcdDriver/HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdio.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdarg.h
-main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/string.h
 
 ../main.c: 
-C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/functions.h: 
-C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/driverlib/MSP432P4xx/driverlib.h: 
-C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/driverlib/MSP432P4xx/adc14.h: 
-C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdint.h: 
 C:/ti/ccsv6/ccs_base/arm/include/msp.h: 
 C:/ti/ccsv6/ccs_base/arm/include/msp432p401r.h: 
+C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdint.h: 
 C:/ti/ccsv6/ccs_base/arm/include/msp_compatibility.h: 
 C:/ti/ccsv6/ccs_base/arm/include/CMSIS/cmsis_ccs.h: 
 C:/ti/ccsv6/ccs_base/arm/include/msp432p401r_classic.h: 
@@ -72,6 +66,8 @@ C:/ti/ccsv6/ccs_base/arm/include/CMSIS/core_cmInstr.h:
 C:/ti/ccsv6/ccs_base/arm/include/CMSIS/core_cmFunc.h: 
 C:/ti/ccsv6/ccs_base/arm/include/CMSIS/core_cmSimd.h: 
 C:/ti/ccsv6/ccs_base/arm/include/system_msp432p401r.h: 
+C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/driverlib/MSP432P4xx/driverlib.h: 
+C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/driverlib/MSP432P4xx/adc14.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdbool.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/yvals.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdarg.h: 
@@ -109,7 +105,5 @@ C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/GrLib/grlib/grlib.h:
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/assert.h: 
 C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/LcdDriver/Crystalfontz128x128_ST7735.h: 
 C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/GrLib/grlib/grlib.h: 
-C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/LcdDriver/HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdio.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdarg.h: 
-C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/string.h: 
