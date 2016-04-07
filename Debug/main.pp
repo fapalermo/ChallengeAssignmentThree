@@ -1,6 +1,7 @@
 # FIXED
 
 main.obj: ../main.c
+main.obj: ../functions.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/msp.h
 main.obj: C:/ti/ccsv6/ccs_base/arm/include/msp432p401r.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdint.h
@@ -55,6 +56,7 @@ main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdio.h
 main.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdarg.h
 
 ../main.c: 
+../functions.h: 
 C:/ti/ccsv6/ccs_base/arm/include/msp.h: 
 C:/ti/ccsv6/ccs_base/arm/include/msp432p401r.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdint.h: 
