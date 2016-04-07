@@ -12,4 +12,5 @@
 	<createSlaveProjects value=""/>
 	<templateProperties value="id=com.ti.mcu.msp432.driverlib.example_0,products=com.ti.mcu.msp432.driverlib,buildProfile=debug,isHybrid=false,"/>
 	<isTargetManual value="true"/>
+	<origin value="C:/Users/braly/Documents/GitHub/ChallengeAssignmentThree"/>
 </projectOptions>
