@@ -16,7 +16,7 @@
 Graphics_Context g_sContext;
 
 //	ADC results buffer
-static uint16_t resultsBuffer[3];
+uint16_t resultsBuffer[3];
 
 volatile uint32_t msTicks;				// counts 1ms timeTicks
 
