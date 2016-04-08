@@ -1,32 +1,35 @@
-//----------------------------------------------------------------------------
-//	Yo, this is a header file
-//----------------------------------------------------------------------------
+/*
+ * functions.h
+ *
+ *  Created on: Apr 8, 2016
+ *      Author: fapal
+ */
+#include <xdc/std.h>
+#include <xdc/runtime/System.h>
 
-#ifndef FUNCTIONS_H_
-#define FUNCTIONS_H_
+/* BIOS Header files */
+#include <ti/sysbios/BIOS.h>
+#include <ti/sysbios/knl/Task.h>
 
-//	Include files
-#include "msp.h"
+/* TI-RTOS Header files */
+#include <ti/drivers/GPIO.h>
+// #include <ti/drivers/I2C.h>
+// #include <ti/drivers/SDSPI.h>
+// #include <ti/drivers/SPI.h>
+// #include <ti/drivers/UART.h>
+// #include <ti/drivers/Watchdog.h>
+// #include <ti/drivers/WiFi.h>
+
+/* Board Header file */
+#include "Board.h"
+
 #include <driverlib.h>
-#include <grlib.h>
-#include "Crystalfontz128x128_ST7735.h"
-#include <stdio.h>
 
-//	Graphic library context
-Graphics_Context g_sContext;
+#define TASKSTACKSIZE   512
 
-//	ADC results buffer
-static uint16_t resultsBuffer[3];
-
-volatile uint32_t msTicks;				// counts 1ms timeTicks
+void initUart(void);
+void initClocks(void);
+int main(void);
 
 
-//	Functions
-void delay(uint32_t);
-void drawTitle(void);
-void drawAccelData(void);
-void port_init(void);
-void screen_init(void);
-void enableWDT(void);
 
-#endif //	FUNCTIONS_H_
