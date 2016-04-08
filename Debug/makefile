@@ -13,7 +13,22 @@ ORDERED_OBJS += \
 "./MSP_EXP432P401R.obj" \
 "./clock.obj" \
 "./empty.obj" \
+"./gfx.obj" \
 "./uartTransmission.obj" \
+"./LcdDriver/Crystalfontz128x128_ST7735.obj" \
+"./LcdDriver/HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj" \
+"./GrLib/grlib/button.obj" \
+"./GrLib/grlib/checkbox.obj" \
+"./GrLib/grlib/circle.obj" \
+"./GrLib/grlib/context.obj" \
+"./GrLib/grlib/display.obj" \
+"./GrLib/grlib/image.obj" \
+"./GrLib/grlib/imageButton.obj" \
+"./GrLib/grlib/line.obj" \
+"./GrLib/grlib/radioButton.obj" \
+"./GrLib/grlib/rectangle.obj" \
+"./GrLib/grlib/string.obj" \
+"./GrLib/fonts/fontfixed6x8.obj" \
 "../MSP_EXP432P401R.cmd" \
 $(GEN_CMDS__FLAG) \
 -l"C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/driverlib/MSP432P4xx/ccs/msp432p4xx_driverlib.lib" \
@@ -27,7 +42,13 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include LcdDriver/subdir_vars.mk
+-include GrLib/grlib/subdir_vars.mk
+-include GrLib/fonts/subdir_vars.mk
 -include subdir_rules.mk
+-include LcdDriver/subdir_rules.mk
+-include GrLib/grlib/subdir_rules.mk
+-include GrLib/fonts/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -154,8 +175,8 @@ ChallengeAssignment3.hex: $(EXE_OUTPUTS)
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(BIN_OUTPUTS__QUOTED)$(GEN_OPTS__QUOTED)$(GEN_CMDS__QUOTED)
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
-	-$(RM) "MSP_EXP432P401R.pp" "clock.pp" "empty.pp" "uartTransmission.pp" 
-	-$(RM) "MSP_EXP432P401R.obj" "clock.obj" "empty.obj" "uartTransmission.obj" 
+	-$(RM) "MSP_EXP432P401R.pp" "clock.pp" "empty.pp" "gfx.pp" "uartTransmission.pp" "LcdDriver\Crystalfontz128x128_ST7735.pp" "LcdDriver\HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.pp" "GrLib\grlib\button.pp" "GrLib\grlib\checkbox.pp" "GrLib\grlib\circle.pp" "GrLib\grlib\context.pp" "GrLib\grlib\display.pp" "GrLib\grlib\image.pp" "GrLib\grlib\imageButton.pp" "GrLib\grlib\line.pp" "GrLib\grlib\radioButton.pp" "GrLib\grlib\rectangle.pp" "GrLib\grlib\string.pp" "GrLib\fonts\fontfixed6x8.pp" 
+	-$(RM) "MSP_EXP432P401R.obj" "clock.obj" "empty.obj" "gfx.obj" "uartTransmission.obj" "LcdDriver\Crystalfontz128x128_ST7735.obj" "LcdDriver\HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj" "GrLib\grlib\button.obj" "GrLib\grlib\checkbox.obj" "GrLib\grlib\circle.obj" "GrLib\grlib\context.obj" "GrLib\grlib\display.obj" "GrLib\grlib\image.obj" "GrLib\grlib\imageButton.obj" "GrLib\grlib\line.obj" "GrLib\grlib\radioButton.obj" "GrLib\grlib\rectangle.obj" "GrLib\grlib\string.obj" "GrLib\fonts\fontfixed6x8.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -205,6 +205,10 @@ clock.obj: C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/d
 clock.obj: C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/driverlib/MSP432P4xx/timer_a.h
 clock.obj: C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/driverlib/MSP432P4xx/uart.h
 clock.obj: C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/driverlib/MSP432P4xx/wdt_a.h
+clock.obj: C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/GrLib/grlib/grlib.h
+clock.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/assert.h
+clock.obj: C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/LcdDriver/Crystalfontz128x128_ST7735.h
+clock.obj: C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/GrLib/grlib/grlib.h
 
 ../clock.c: 
 ../functions.h: 
@@ -411,3 +415,7 @@ C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/driverlib/MS
 C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/driverlib/MSP432P4xx/timer_a.h: 
 C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/driverlib/MSP432P4xx/uart.h: 
 C:/ti/tirtos_msp43x_2_16_00_08/products/msp432_driverlib_3_10_00_09/driverlib/MSP432P4xx/wdt_a.h: 
+C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/GrLib/grlib/grlib.h: 
+C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/assert.h: 
+C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/LcdDriver/Crystalfontz128x128_ST7735.h: 
+C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/GrLib/grlib/grlib.h: 

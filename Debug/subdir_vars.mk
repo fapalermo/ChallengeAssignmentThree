@@ -13,18 +13,21 @@ C_SRCS += \
 ../MSP_EXP432P401R.c \
 ../clock.c \
 ../empty.c \
+../gfx.c \
 ../uartTransmission.c 
 
 OBJS += \
 ./MSP_EXP432P401R.obj \
 ./clock.obj \
 ./empty.obj \
+./gfx.obj \
 ./uartTransmission.obj 
 
 C_DEPS += \
 ./MSP_EXP432P401R.pp \
 ./clock.pp \
 ./empty.pp \
+./gfx.pp \
 ./uartTransmission.pp 
 
 GEN_MISC_DIRS += \
@@ -51,18 +54,21 @@ C_DEPS__QUOTED += \
 "MSP_EXP432P401R.pp" \
 "clock.pp" \
 "empty.pp" \
+"gfx.pp" \
 "uartTransmission.pp" 
 
 OBJS__QUOTED += \
 "MSP_EXP432P401R.obj" \
 "clock.obj" \
 "empty.obj" \
+"gfx.obj" \
 "uartTransmission.obj" 
 
 C_SRCS__QUOTED += \
 "../MSP_EXP432P401R.c" \
 "../clock.c" \
 "../empty.c" \
+"../gfx.c" \
 "../uartTransmission.c" 
 
 

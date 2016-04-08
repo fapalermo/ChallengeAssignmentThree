@@ -24,12 +24,14 @@
 #include "Board.h"
 
 #include <driverlib.h>
+#include <grlib.h>
+#include "Crystalfontz128x128_ST7735.h"
 
 #define TASKSTACKSIZE   512
 
 void initUart(void);
 void initClocks(void);
-int main(void);
+void initGfx(void);
 
 
 

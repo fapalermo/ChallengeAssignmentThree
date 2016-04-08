@@ -38,6 +38,7 @@
 
 Task_Struct task0Struct;
 Char task0Stack[TASKSTACKSIZE];
+Graphics_Context g_sContext;
 
 /*
  *  ======== heartBeatFxn ========
