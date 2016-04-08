@@ -62,37 +62,19 @@ void drawAccelData()
 }
 
 //----------------------------------------------------------------------------
-//	Initializing the screen
-//----------------------------------------------------------------------------
-void screen_init()
-{
-	//	Initializes Clock System
-	MAP_CS_setDCOCenteredFrequency(CS_DCO_FREQUENCY_48);
-	MAP_CS_initClockSignal(CS_MCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_1 );
-	MAP_CS_initClockSignal(CS_HSMCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_1 );
-	MAP_CS_initClockSignal(CS_SMCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_1 );
-	MAP_CS_initClockSignal(CS_ACLK, CS_REFOCLK_SELECT, CS_CLOCK_DIVIDER_1);
-
-	//	Initializes display
-	Crystalfontz128x128_Init();
-
-	//	Set default screen orientation
-	Crystalfontz128x128_SetOrientation(LCD_ORIENTATION_UP);
-
-	//	Initializes graphics context
-	Graphics_initContext(&g_sContext, &g_sCrystalfontz128x128);
-	Graphics_setForegroundColor(&g_sContext, GRAPHICS_COLOR_RED);
-	Graphics_setBackgroundColor(&g_sContext, GRAPHICS_COLOR_WHITE);
-	GrContextFontSet(&g_sContext, &g_sFontFixed6x8);
-	drawTitle();
-
-}
-
-//----------------------------------------------------------------------------
 //	Initializing ports
 //----------------------------------------------------------------------------
 void port_init()
 {
+
+}
+
+//----------------------------------------------------------------------------
+//	Initializing the screen
+//----------------------------------------------------------------------------
+void screen_init()
+{
+<<<<<<< HEAD
 	//	Initialize Red, Blue, and Green LEDs
 	MAP_GPIO_setAsOutputPin(GPIO_PORT_P5, GPIO_PIN6);	// Blue
 	MAP_GPIO_setOutputLowOnPin(GPIO_PORT_P5, GPIO_PIN6);
@@ -132,10 +114,9 @@ void port_init()
 
 	//	Setting up the sample timer to automatically step through the sequence convert
 	MAP_ADC14_enableSampleTimer(ADC_AUTOMATIC_ITERATION);
+=======
+>>>>>>> origin/master
 
-	//	Triggering the start of the sample
-	MAP_ADC14_enableConversion();
-	MAP_ADC14_toggleConversionTrigger();
 }
 
 //----------------------------------------------------------------------------
