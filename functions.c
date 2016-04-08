@@ -93,6 +93,18 @@ void screen_init()
 //----------------------------------------------------------------------------
 void port_init()
 {
+	//	Initialize Red, Blue, and Green LEDs
+	MAP_GPIO_setAsOutputPin(GPIO_PORT_P5, GPIO_PIN6);	// Blue
+	MAP_GPIO_setOutputLowOnPin(GPIO_PORT_P5, GPIO_PIN6);
+	MAP_GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN4);	// Green
+	MAP_GPIO_setOutputLowOnPin(GPIO_PORT_P2, GPIO_PIN4);
+	MAP_GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN6);	// Red
+	MAP_GPIO_setOutputLowOnPin(GPIO_PORT_P2, GPIO_PIN6);
+
+	// Configuring P3.5 as an input for button press
+	MAP_GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P3, GPIO_PIN5);
+	MAP_GPIO_clearInterruptFlag(GPIO_PORT_P3, GPIO_PIN5);
+
 	//	Configures Pin 4.0, 4.2, and 6.1 as ADC inputs
 	MAP_GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P4, GPIO_PIN0 | GPIO_PIN2, GPIO_TERTIARY_MODULE_FUNCTION);
 	MAP_GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P6, GPIO_PIN1, GPIO_TERTIARY_MODULE_FUNCTION);
@@ -111,9 +123,11 @@ void port_init()
 
 	//	Enabling the interrupt when a conversion on channel 2 (end of sequence) is complete and enabling conversions
 	MAP_ADC14_enableInterrupt(ADC_INT2);
+	MAP_GPIO_enableInterrupt(GPIO_PORT_P3, GPIO_PIN5);
 
 	//	Enabling Interrupts
 	MAP_Interrupt_enableInterrupt(INT_ADC14);
+	MAP_Interrupt_enableInterrupt(INT_PORT3);
 	MAP_Interrupt_enableMaster();
 
 	//	Setting up the sample timer to automatically step through the sequence convert
