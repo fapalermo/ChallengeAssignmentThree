@@ -10,6 +10,9 @@
 #include <ti/sysbios/hal/Hwi.h>
 extern const ti_sysbios_hal_Hwi_Handle UartHwi;
 
+#include <ti/sysbios/hal/Hwi.h>
+extern const ti_sysbios_hal_Hwi_Handle adcHwi;
+
 extern int xdc_runtime_Startup__EXECFXN__C;
 
 extern int xdc_runtime_Startup__RESETFXN__C;

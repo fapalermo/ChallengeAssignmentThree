@@ -33,5 +33,7 @@ void initUart(void);
 void initClocks(void);
 void initGfx(void);
 
+void initADC(void);
+
 
 

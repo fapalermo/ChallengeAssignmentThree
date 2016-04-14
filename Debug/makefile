@@ -11,6 +11,7 @@ GEN_CMDS__FLAG := -l"configPkg/linker.cmd"
 
 ORDERED_OBJS += \
 "./MSP_EXP432P401R.obj" \
+"./adc14.obj" \
 "./clock.obj" \
 "./empty.obj" \
 "./gfx.obj" \
@@ -142,32 +143,32 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-ChallengeAssignment3.out \
+ChallengeAssignmentThree.out \
 
 EXE_OUTPUTS__QUOTED += \
-"ChallengeAssignment3.out" \
+"ChallengeAssignmentThree.out" \
 
 BIN_OUTPUTS += \
-ChallengeAssignment3.hex \
+ChallengeAssignmentThree.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"ChallengeAssignment3.hex" \
+"ChallengeAssignmentThree.hex" \
 
 
 # All Target
-all: ChallengeAssignment3.out
+all: ChallengeAssignmentThree.out
 
 # Tool invocations
-ChallengeAssignment3.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+ChallengeAssignmentThree.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP432 Linker'
-	"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --advice:power_severity=suppress --advice:power=all -g --gcc --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs --define=MSP432WARE --diag_wrap=off --diag_warning=225 --diag_warning=255 --display_error_number --gen_func_subsections=on -z -m"ChallengeAssignment3.map" --heap_size=1024 --stack_size=512 -i"C:/ti/ccsv6/ccs_base/arm/include" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/lib" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --reread_libs --display_error_number --diag_wrap=off --warn_sections --xml_link_info="ChallengeAssignment3_linkInfo.xml" --rom_model -o "ChallengeAssignment3.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --advice:power_severity=suppress --advice:power=all -g --gcc --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs --define=MSP432WARE --diag_wrap=off --display_error_number --diag_warning=225 --diag_warning=255 --gen_func_subsections=on -z -m"ChallengeAssignmentThree.map" --heap_size=1024 --stack_size=512 -i"C:/ti/ccsv6/ccs_base/arm/include" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/lib" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --reread_libs --display_error_number --diag_wrap=off --warn_sections --xml_link_info="ChallengeAssignmentThree_linkInfo.xml" --rom_model -o "ChallengeAssignmentThree.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-ChallengeAssignment3.hex: $(EXE_OUTPUTS)
+ChallengeAssignmentThree.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: MSP432 Hex Utility'
-	"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armhex"  -o "ChallengeAssignment3.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armhex"  -o "ChallengeAssignmentThree.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 
@@ -175,8 +176,8 @@ ChallengeAssignment3.hex: $(EXE_OUTPUTS)
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(BIN_OUTPUTS__QUOTED)$(GEN_OPTS__QUOTED)$(GEN_CMDS__QUOTED)
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
-	-$(RM) "MSP_EXP432P401R.pp" "clock.pp" "empty.pp" "gfx.pp" "uartTransmission.pp" "LcdDriver\Crystalfontz128x128_ST7735.pp" "LcdDriver\HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.pp" "GrLib\grlib\button.pp" "GrLib\grlib\checkbox.pp" "GrLib\grlib\circle.pp" "GrLib\grlib\context.pp" "GrLib\grlib\display.pp" "GrLib\grlib\image.pp" "GrLib\grlib\imageButton.pp" "GrLib\grlib\line.pp" "GrLib\grlib\radioButton.pp" "GrLib\grlib\rectangle.pp" "GrLib\grlib\string.pp" "GrLib\fonts\fontfixed6x8.pp" 
-	-$(RM) "MSP_EXP432P401R.obj" "clock.obj" "empty.obj" "gfx.obj" "uartTransmission.obj" "LcdDriver\Crystalfontz128x128_ST7735.obj" "LcdDriver\HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj" "GrLib\grlib\button.obj" "GrLib\grlib\checkbox.obj" "GrLib\grlib\circle.obj" "GrLib\grlib\context.obj" "GrLib\grlib\display.obj" "GrLib\grlib\image.obj" "GrLib\grlib\imageButton.obj" "GrLib\grlib\line.obj" "GrLib\grlib\radioButton.obj" "GrLib\grlib\rectangle.obj" "GrLib\grlib\string.obj" "GrLib\fonts\fontfixed6x8.obj" 
+	-$(RM) "MSP_EXP432P401R.pp" "adc14.pp" "clock.pp" "empty.pp" "gfx.pp" "uartTransmission.pp" "LcdDriver\Crystalfontz128x128_ST7735.pp" "LcdDriver\HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.pp" "GrLib\grlib\button.pp" "GrLib\grlib\checkbox.pp" "GrLib\grlib\circle.pp" "GrLib\grlib\context.pp" "GrLib\grlib\display.pp" "GrLib\grlib\image.pp" "GrLib\grlib\imageButton.pp" "GrLib\grlib\line.pp" "GrLib\grlib\radioButton.pp" "GrLib\grlib\rectangle.pp" "GrLib\grlib\string.pp" "GrLib\fonts\fontfixed6x8.pp" 
+	-$(RM) "MSP_EXP432P401R.obj" "adc14.obj" "clock.obj" "empty.obj" "gfx.obj" "uartTransmission.obj" "LcdDriver\Crystalfontz128x128_ST7735.obj" "LcdDriver\HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj" "GrLib\grlib\button.obj" "GrLib\grlib\checkbox.obj" "GrLib\grlib\circle.obj" "GrLib\grlib\context.obj" "GrLib\grlib\display.obj" "GrLib\grlib\image.obj" "GrLib\grlib\imageButton.obj" "GrLib\grlib\line.obj" "GrLib\grlib\radioButton.obj" "GrLib\grlib\rectangle.obj" "GrLib\grlib\string.obj" "GrLib\fonts\fontfixed6x8.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
