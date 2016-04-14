@@ -35,5 +35,7 @@ void initGfx(void);
 void buttonInit(void);
 void gpioButton0(void);
 
+void initADC(void);
+
 
 

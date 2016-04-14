@@ -1,7 +1,7 @@
 # FIXED
 
 GrLib/fonts/fontfixed6x8.obj: ../GrLib/fonts/fontfixed6x8.c
-GrLib/fonts/fontfixed6x8.obj: C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/GrLib/grlib/grlib.h
+GrLib/fonts/fontfixed6x8.obj: C:/Users/Kevin/Desktop/ChallengeAssignmentThree/GrLib/grlib/grlib.h
 GrLib/fonts/fontfixed6x8.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdint.h
 GrLib/fonts/fontfixed6x8.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdbool.h
 GrLib/fonts/fontfixed6x8.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/yvals.h
@@ -11,7 +11,7 @@ GrLib/fonts/fontfixed6x8.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/includ
 GrLib/fonts/fontfixed6x8.obj: C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/assert.h
 
 ../GrLib/fonts/fontfixed6x8.c: 
-C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/GrLib/grlib/grlib.h: 
+C:/Users/Kevin/Desktop/ChallengeAssignmentThree/GrLib/grlib/grlib.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdint.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/stdbool.h: 
 C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include/yvals.h: 
