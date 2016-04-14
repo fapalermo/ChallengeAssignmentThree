@@ -32,6 +32,8 @@
 void initUart(void);
 void initClocks(void);
 void initGfx(void);
+void buttonInit(void);
+void gpioButton0(void);
 
 
 
