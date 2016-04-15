@@ -76,8 +76,9 @@ int main(void)
     // Board_initWiFi();
     initClocks();
     initADC();
+    buttonInit();
 
-    Timer32_startTimer((uint32_t)TIMER32_0_BASE,0);
+    //Timer32_startTimer((uint32_t)TIMER32_0_BASE,0);
 
     /* Construct heartBeat Task  thread */
     Task_Params_init(&taskParams);

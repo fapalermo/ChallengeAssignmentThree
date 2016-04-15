@@ -34,6 +34,7 @@ void initClocks(void);
 void initGfx(void);
 void buttonInit(void);
 void gpioButton0(void);
+void SW1_IRQHandler(void);
 
 void initADC(void);
 
