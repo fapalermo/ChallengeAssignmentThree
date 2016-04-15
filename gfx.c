@@ -6,7 +6,7 @@
  */
 #include "functions.h"
 
-extern Graphics_Context g_sContext;
+Graphics_Context g_sContext;
 
 void initGfx(void){
 	Graphics_initContext(&g_sContext, &g_sCrystalfontz128x128);

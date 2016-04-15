@@ -10,6 +10,7 @@
 /* BIOS Header files */
 #include <ti/sysbios/BIOS.h>
 #include <ti/sysbios/knl/Task.h>
+#include <ti/sysbios/knl/Mailbox.h>
 
 /* TI-RTOS Header files */
 #include <ti/drivers/GPIO.h>
@@ -26,6 +27,7 @@
 #include <driverlib.h>
 #include <grlib.h>
 #include "Crystalfontz128x128_ST7735.h"
+#include <xdc/cfg/global.h>
 
 #define TASKSTACKSIZE   512
 
@@ -36,6 +38,7 @@ void buttonInit(void);
 void gpioButton0(void);
 void SW1_IRQHandler(void);
 
+void accel_task(void);
 void initADC(void);
 
 

@@ -74,9 +74,11 @@ int main(void)
     // Board_initUART();
     // Board_initWatchdog();
     // Board_initWiFi();
+    initUart();
     initClocks();
     initADC();
     buttonInit();
+    initGfx();
 
     //Timer32_startTimer((uint32_t)TIMER32_0_BASE,0);
 

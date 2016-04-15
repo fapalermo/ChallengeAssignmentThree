@@ -10,8 +10,10 @@
 
 /* Standard Includes */
 #include <stdint.h>
-
+#include "functions.h"
 #include <stdbool.h>
+
+extern Graphics_Context g_sContext;
 
 void initADC(void) {
 	// Configures Pin 4.0, 4.2, and 6.1 as ADC input for Accelerometer
@@ -52,6 +54,60 @@ void initADC(void) {
     // Enabling/Toggling Conversion
     MAP_ADC14_enableConversion();
 }
+void accel_task(void)
+{
+	uint16_t acc_vals[3];
+	char string[9];
+	uint16_t last_val_x = 0;
+	uint16_t last_val_y = 0;
+	uint16_t last_val_z = 0;
+	uint32_t average_x = 0;
+	uint32_t average_y = 0;
+	uint32_t average_z = 0;
+	uint16_t count = 0;
+
+	/* Display Accelerometer Section Title */
+	Graphics_drawStringCentered(&g_sContext, "Accelerometer:",
+								AUTO_STRING_LENGTH, 64, 10, OPAQUE_TEXT);
+
+	while(1)
+	{
+		/* Wait for an ADC interrupt to pass in new accelerometer values */
+		Mailbox_pend(adc_result, acc_vals, BIOS_WAIT_FOREVER);
+
+		/* Accumulate the differences between values and increment count */
+		average_x += abs(acc_vals[0] - last_val_x);
+		average_y += abs(acc_vals[1] - last_val_y);
+		average_z += abs(acc_vals[2] - last_val_z);
+		last_val_x = acc_vals[0];
+		last_val_y = acc_vals[1];
+		last_val_z = acc_vals[2];
+		count++;
+
+		/* If count has reached 200 (samples occur every 5ms so 200*5ms = 1 sec)
+		 * then take the average */
+		if(count >= 200)
+		{
+			average_x /= 200;
+			average_y /= 200;
+			average_z /= 200;
+
+			/* Print out averages to the LCD */
+			sprintf(string, "X: %5d", average_x);
+			Graphics_drawStringCentered(&g_sContext, (int8_t *)string, 8, 64, 20, OPAQUE_TEXT);
+			sprintf(string, "Y: %5d", average_y);
+			Graphics_drawStringCentered(&g_sContext, (int8_t *)string, 8, 64, 30, OPAQUE_TEXT);
+			sprintf(string, "Z: %5d", average_z);
+			Graphics_drawStringCentered(&g_sContext, (int8_t *)string, 8, 64, 40, OPAQUE_TEXT);
+
+			/* Reset the averages for the next iteration */
+			average_x = 0;
+			average_y = 0;
+			average_z = 0;
+			count = 0;
+		}
+	}
+}
 
 void ADC14_IRQHandler(void) {
     uint64_t status = MAP_ADC14_getEnabledInterruptStatus();
@@ -64,7 +120,7 @@ void ADC14_IRQHandler(void) {
         curADCResult[1] = ADC14_getResult(ADC_MEM1);
         curADCResult[2] = ADC14_getResult(ADC_MEM2);
 
-        //Mailbox_post(acc_results, curADCResult, 0);
+        Mailbox_post(adc_result, &curADCResult, BIOS_NO_WAIT);
     }
 
 
