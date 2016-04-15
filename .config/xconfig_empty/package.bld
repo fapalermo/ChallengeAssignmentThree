@@ -11,7 +11,7 @@ var makeAssembly = false;
 var Executable = xdc.module('xdc.bld.Executable');
 
 var exeOpts = new Executable.Attrs({
-        cfgScript: 'C:/Users/Kevin/Desktop/ChallengeAssignmentThree/empty.cfg',
+        cfgScript: 'C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/empty.cfg',
         profile: 'release',
         cfgHome: 'xconfig_empty',
 });
@@ -40,8 +40,8 @@ else {
 }
 
 var thisObj = {
-    cfg:        'C:/Users/Kevin/Desktop/ChallengeAssignmentThree/empty.cfg',
-    outputPath: 'C:/Users/Kevin/Desktop/ChallengeAssignmentThree/.config/xconfig_empty',
+    cfg:        'C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/empty.cfg',
+    outputPath: 'C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/.config/xconfig_empty',
     exeName:    'empty' + suffix,
     exeIntName: 'empty' + suffix.replace('.', '_'),
     targ:       targ,

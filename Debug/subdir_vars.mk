@@ -11,11 +11,8 @@ CFG_SRCS += \
 
 C_SRCS += \
 ../MSP_EXP432P401R.c \
-<<<<<<< HEAD
-../button.c \
-=======
 ../adc14.c \
->>>>>>> origin/master
+../button.c \
 ../clock.c \
 ../empty.c \
 ../gfx.c \
@@ -23,11 +20,8 @@ C_SRCS += \
 
 OBJS += \
 ./MSP_EXP432P401R.obj \
-<<<<<<< HEAD
-./button.obj \
-=======
 ./adc14.obj \
->>>>>>> origin/master
+./button.obj \
 ./clock.obj \
 ./empty.obj \
 ./gfx.obj \
@@ -35,11 +29,8 @@ OBJS += \
 
 C_DEPS += \
 ./MSP_EXP432P401R.pp \
-<<<<<<< HEAD
-./button.pp \
-=======
 ./adc14.pp \
->>>>>>> origin/master
+./button.pp \
 ./clock.pp \
 ./empty.pp \
 ./gfx.pp \
@@ -67,11 +58,8 @@ GEN_MISC_DIRS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "MSP_EXP432P401R.pp" \
-<<<<<<< HEAD
-"button.pp" \
-=======
 "adc14.pp" \
->>>>>>> origin/master
+"button.pp" \
 "clock.pp" \
 "empty.pp" \
 "gfx.pp" \
@@ -79,11 +67,8 @@ C_DEPS__QUOTED += \
 
 OBJS__QUOTED += \
 "MSP_EXP432P401R.obj" \
-<<<<<<< HEAD
-"button.obj" \
-=======
 "adc14.obj" \
->>>>>>> origin/master
+"button.obj" \
 "clock.obj" \
 "empty.obj" \
 "gfx.obj" \
@@ -91,11 +76,8 @@ OBJS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../MSP_EXP432P401R.c" \
-<<<<<<< HEAD
-"../button.c" \
-=======
 "../adc14.c" \
->>>>>>> origin/master
+"../button.c" \
 "../clock.c" \
 "../empty.c" \
 "../gfx.c" \

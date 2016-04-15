@@ -70,6 +70,7 @@ int main(void)
     // Board_initWatchdog();
     // Board_initWiFi();
     initADC();
+    buttonInit();
 
     /* Construct heartBeat Task  thread */
     Task_Params_init(&taskParams);
