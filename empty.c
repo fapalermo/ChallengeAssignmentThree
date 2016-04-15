@@ -49,7 +49,7 @@ Void heartBeatFxn(UArg arg0, UArg arg1)
 {
     while (1) {
         Task_sleep((UInt)arg0);
-        GPIO_toggle(Board_LED0);
+        //GPIO_toggle(Board_LED0);
     }
 }
 
@@ -58,7 +58,12 @@ Void heartBeatFxn(UArg arg0, UArg arg1)
  */
 int main(void)
 {
-    Task_Params taskParams;
+
+	/* Halting WDT and disabling master interrupts */
+	WDT_A_holdTimer();
+	Interrupt_disableMaster();
+
+	Task_Params taskParams;
 
     /* Call board init functions */
     Board_initGeneral();
@@ -69,7 +74,10 @@ int main(void)
     // Board_initUART();
     // Board_initWatchdog();
     // Board_initWiFi();
+    initClocks();
     initADC();
+
+    Timer32_startTimer((uint32_t)TIMER32_0_BASE,0);
 
     /* Construct heartBeat Task  thread */
     Task_Params_init(&taskParams);
