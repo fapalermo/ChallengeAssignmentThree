@@ -7,5 +7,5 @@
 #       or equal to the generated config header
 #
 linker.cmd: package/cfg/empty_pem4f.xdl
-	$(SED) 's"^\"\(package/cfg/empty_pem4fcfg.cmd\)\"$""\"C:/ccsv6_workshop/msp432/workspace/ChallengeAssignment3/Debug/configPkg/\1\""' package/cfg/empty_pem4f.xdl > $@
+	$(SED) 's"^\"\(package/cfg/empty_pem4fcfg.cmd\)\"$""\"C:/Users/braly/workspace_v6_1/ChallengeAssignment3/Debug/configPkg/\1\""' package/cfg/empty_pem4f.xdl > $@
 	-$(SETDATE) -r:max package/cfg/empty_pem4f.h compiler.opt compiler.opt.defs

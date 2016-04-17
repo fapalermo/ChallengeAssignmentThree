@@ -9,14 +9,14 @@
  */
 
 
--l"C:\ccsv6_workshop\msp432\workspace\ChallengeAssignment3\Debug\configPkg\package\cfg\empty_pem4f.oem4f"
+-l"C:\Users\braly\workspace_v6_1\ChallengeAssignment3\Debug\configPkg\package\cfg\empty_pem4f.oem4f"
 -l"C:/ti/tirtos_msp43x_2_16_00_08/products/tidrivers_msp43x_2_16_00_08/packages/ti/mw/wifi/cc3x00/lib/cc3x00_host_driver.aem4f"
 -l"C:/ti/tirtos_msp43x_2_16_00_08/products/tidrivers_msp43x_2_16_00_08/packages/ti/drivers/lib/drivers_MSP432P401R.aem4f"
 -l"C:/ti/tirtos_msp43x_2_16_00_08/products/tidrivers_msp43x_2_16_00_08/packages/ti/drivers/lib/drivers_wifi_MSP432P401R.aem4f"
 -l"C:/ti/tirtos_msp43x_2_16_00_08/products/tidrivers_msp43x_2_16_00_08/packages/ti/drivers/lib/power_tirtos_MSP432P401R.aem4f"
 -l"C:\ti\tirtos_msp43x_2_16_00_08\products\tidrivers_msp43x_2_16_00_08\packages\ti\mw\fatfs\lib\release\ti.mw.fatfs.aem4f"
 -l"C:/ti/tirtos_msp43x_2_16_00_08/products/tidrivers_msp43x_2_16_00_08/packages/ti/drivers/ports/lib/tirtosport.aem4f"
--l"C:\ccsv6_workshop\msp432\workspace\ChallengeAssignment3\src\sysbios\sysbios.aem4f"
+-l"C:\Users\braly\workspace_v6_1\ChallengeAssignment3\src\sysbios\sysbios.aem4f"
 -l"C:\ti\tirtos_msp43x_2_16_00_08\products\bios_6_45_01_29\packages\ti\targets\arm\rtsarm\lib\ti.targets.arm.rtsarm.aem4f"
 -l"C:\ti\tirtos_msp43x_2_16_00_08\products\bios_6_45_01_29\packages\ti\targets\arm\rtsarm\lib\boot.aem4f"
 -l"C:\ti\tirtos_msp43x_2_16_00_08\products\bios_6_45_01_29\packages\ti\targets\arm\rtsarm\lib\auto_init.aem4f"

@@ -21,12 +21,10 @@ void initADC(void) {
    	MAP_GPIO_setAsPeripheralModuleFunctionInputPin(GPIO_PORT_P6, GPIO_PIN1, GPIO_TERTIARY_MODULE_FUNCTION);
 
 	ADC14_enableModule();
-    //ADC14_initModule(ADC_CLOCKSOURCE_MCLK, ADC_PREDIVIDER_1, ADC_DIVIDER_1,
-    //        ADC_TEMPSENSEMAP); // TODO: Check if these are the correct inputs
-	MAP_ADC14_initModule(ADC_CLOCKSOURCE_ADCOSC, ADC_PREDIVIDER_64, ADC_DIVIDER_8, 0);
+	MAP_ADC14_initModule(ADC_CLOCKSOURCE_HSMCLK, ADC_PREDIVIDER_64, ADC_DIVIDER_8, 0);
 
     // Configuring ADC Memory
-    MAP_ADC14_configureMultiSequenceMode(ADC_MEM0, ADC_MEM2, false);
+    MAP_ADC14_configureMultiSequenceMode(ADC_MEM0, ADC_MEM2, true);
     MAP_ADC14_configureConversionMemory(ADC_MEM0, ADC_VREFPOS_AVCC_VREFNEG_VSS,
     		ADC_INPUT_A14, false);
     MAP_ADC14_configureConversionMemory(ADC_MEM1, ADC_VREFPOS_AVCC_VREFNEG_VSS,
@@ -34,7 +32,7 @@ void initADC(void) {
     MAP_ADC14_configureConversionMemory(ADC_MEM1, ADC_VREFPOS_AVCC_VREFNEG_VSS,
        		ADC_INPUT_A11, false);
 
-    // Enable the interrupts
+    // Enable the interrupts when the conversion is finished
     MAP_ADC14_enableInterrupt(ADC_INT2);
 
     /* Enable 5ms timer */
@@ -43,9 +41,8 @@ void initADC(void) {
     Timer32_enableInterrupt((uint32_t)TIMER32_0_BASE);
     Interrupt_enableInterrupt(INT_T32_INT1);
 
+    // Enable interrupts
     MAP_Interrupt_enableInterrupt(INT_ADC14);
-
-    // Enable master
     MAP_Interrupt_enableMaster();
 
     // Set up automatic sequence to convert
@@ -53,6 +50,7 @@ void initADC(void) {
 
     // Enabling/Toggling Conversion
     MAP_ADC14_enableConversion();
+    MAP_ADC14_toggleConversionTrigger();
 }
 void accel_task(void)
 {
