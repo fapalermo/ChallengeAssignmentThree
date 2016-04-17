@@ -25,6 +25,12 @@ extern const ti_sysbios_knl_Mailbox_Handle adc_result;
 #include <ti/sysbios/knl/Task.h>
 extern const ti_sysbios_knl_Task_Handle adc_task;
 
+#include <ti/sysbios/knl/Task.h>
+extern const ti_sysbios_knl_Task_Handle button;
+
+#include <ti/sysbios/hal/Hwi.h>
+extern const ti_sysbios_hal_Hwi_Handle Timer32_IRQ;
+
 extern int xdc_runtime_Startup__EXECFXN__C;
 
 extern int xdc_runtime_Startup__RESETFXN__C;

@@ -24,9 +24,12 @@
 /* Board Header file */
 #include "Board.h"
 
+/* Libraries */
 #include <driverlib.h>
 #include <grlib.h>
 #include "Crystalfontz128x128_ST7735.h"
+#include <stdio.h>
+#include <math.h>
 #include <xdc/cfg/global.h>
 
 #define TASKSTACKSIZE   512
@@ -38,7 +41,7 @@ void buttonInit(void);
 void gpioButton0(void);
 void SW1_IRQHandler(void);
 
-void accel_task(void);
+void display_accel(void);
 void initADC(void);
 
 

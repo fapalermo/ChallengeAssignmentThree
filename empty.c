@@ -49,7 +49,7 @@ Void heartBeatFxn(UArg arg0, UArg arg1)
 {
     while (1) {
         Task_sleep((UInt)arg0);
-        //GPIO_toggle(Board_LED0);
+        GPIO_toggle(Board_LED0);
     }
 }
 
