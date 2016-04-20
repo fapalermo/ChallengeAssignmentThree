@@ -7,7 +7,7 @@
         <srcFile name="package/cfg/empty_pem4f.c"/>
     </sources>
     <configscripts>
-        <srcFile name="C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/empty.cfg"/>
+        <srcFile name="C:/ccsv6_workshop/msp432/workspace/ChallengeAssignmentThree/empty.cfg"/>
     </configscripts>
     <makefiles>
         <srcFile name="package.mak" src="package.bld"/>
@@ -44,7 +44,7 @@
         isPartial="false"
         xCfgScript="package/cfg/empty_pem4f.cfg"
         xCfgPrefix="package/cfg/empty_pem4f"
-        cfgScript="C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/empty.cfg"
+        cfgScript="C:/ccsv6_workshop/msp432/workspace/ChallengeAssignmentThree/empty.cfg"
         cfgArgs="null"
         />
     </configurations>
@@ -56,7 +56,7 @@
         profile="release"
         xCfgScript="package/cfg/empty_pem4f.cfg"
         xCfgPrefix="package/cfg/empty_pem4f"
-        cfgScript="C:/Users/braly/workspace_v6_1/ChallengeAssignmentThree/empty.cfg"
+        cfgScript="C:/ccsv6_workshop/msp432/workspace/ChallengeAssignmentThree/empty.cfg"
         cfgArgs="null"
         />
     </executables>
