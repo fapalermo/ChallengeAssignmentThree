@@ -8,7 +8,8 @@
 
 Graphics_Context g_sContext;
 
-void initGfx(void){
+void initGfx(void)
+{
 	/* Initializes display */
 	Crystalfontz128x128_Init();
 
@@ -21,5 +22,4 @@ void initGfx(void){
 	Graphics_setBackgroundColor(&g_sContext, GRAPHICS_COLOR_WHITE);
 	GrContextFontSet(&g_sContext, &g_sFontFixed6x8);
 	Graphics_clearDisplay(&g_sContext);
-	}
-
+}

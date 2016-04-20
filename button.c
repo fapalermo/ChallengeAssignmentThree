@@ -5,42 +5,32 @@
  *      Author: fapal - this guy
  */
 #include "functions.h"
-#include <xdc/std.h>
-#include <xdc/runtime/System.h>
-#include <ti/sysbios/BIOS.h>
-#include <ti/sysbios/knl/Task.h>
-#include <ti/sysbios/knl/Mailbox.h>
-#include <ti/sysbios/knl/Semaphore.h>
-#include <xdc/cfg/global.h>
-
 
 void button_task(void) {
 	Bool button_press = FALSE;
 
-	while(1)
+	Semaphore_pend(Button_Semaphore, BIOS_WAIT_FOREVER);
+
+	if (button_press == FALSE)
 	{
-		Semaphore_pend(Button_Semaphore, BIOS_WAIT_FOREVER);
+		// change status of LED from red to green or vice versa
+		MAP_GPIO_toggleOutputOnPin(GPIO_PORT_P2, GPIO_PIN6);	// toggle Red
+		MAP_GPIO_toggleOutputOnPin(GPIO_PORT_P2, GPIO_PIN4);	// toggle Green
 
-		if (button_press == FALSE)
-		{
-			// change status of LED from red to green or vice versa
-			MAP_GPIO_toggleOutputOnPin(GPIO_PORT_P2, GPIO_PIN6);	// toggle Red
-			MAP_GPIO_toggleOutputOnPin(GPIO_PORT_P2, GPIO_PIN4);	// toggle Green
+		Timer32_startTimer((uint32_t)TIMER32_0_BASE,0);
+		UART_transmitData(EUSCI_A0_BASE, 'g');
 
-			Timer32_startTimer((uint32_t)TIMER32_0_BASE,0);
+		button_press = TRUE;
+	}
+	else
+	{
+		// change status of LED from red to green or vice versa
+		MAP_GPIO_toggleOutputOnPin(GPIO_PORT_P2, GPIO_PIN6);	// toggle Red
+		MAP_GPIO_toggleOutputOnPin(GPIO_PORT_P2, GPIO_PIN4);	// toggle Green
 
-			button_press = TRUE;
-		}
-		else
-		{
-			// change status of LED from red to green or vice versa
-			MAP_GPIO_toggleOutputOnPin(GPIO_PORT_P2, GPIO_PIN6);	// toggle Red
-			MAP_GPIO_toggleOutputOnPin(GPIO_PORT_P2, GPIO_PIN4);	// toggle Green
+		Timer32_haltTimer((uint32_t)TIMER32_0_BASE);
 
-			Timer32_haltTimer((uint32_t)TIMER32_0_BASE);
-
-			button_press = FALSE;
-		}
+		button_press = FALSE;
 	}
 }
 
@@ -64,6 +54,7 @@ void buttonInit(void){
 	GPIO_interruptEdgeSelect(GPIO_PORT_P5, GPIO_PIN1, GPIO_HIGH_TO_LOW_TRANSITION);
 	Interrupt_enableInterrupt(INT_PORT5);
 }
+
 void gpioButton0(void){
 	initUart();
 }
@@ -76,4 +67,3 @@ void SW1_IRQHandler(void){
 
 	Semaphore_post(Button_Semaphore);
 }
-
